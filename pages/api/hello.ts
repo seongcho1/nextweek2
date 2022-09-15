@@ -11,18 +11,17 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
 
-  const menuData = fs.readFileSync("../../public/menu.csv", {encoding: 'tuf-8'});
-  console.log(menuData);
+  //const menuData = fs.readFileSync(__dirname + "/../../public/menu.csv", { encoding: 'utf-8' });
+  //console.log(menuData);
 
-  
-  
+
+
   res.status(200).json({ hello: 'next.js' })
 
   /*
   res.writeHead(302, {
     Location: "https://10.16.5.1:4430/auth/login",
   });
-
   res.end();
   */
 

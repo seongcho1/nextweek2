@@ -1,8 +1,36 @@
+import { useEffect } from "react";
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import BaseLayout from "../components/BaseLayout"
+import axios from "axios";
 
 const Home: NextPage = () => {
+
+  useEffect(() => {
+    //onMount
+    //onUpdate
+    console.log(window);
+    fetch('/menu.csv')
+      .then(res => { return res.text(); })
+      .then(text => {
+        const result = text.split('\n').map(
+          line => line.split(',')
+        );
+        console.log(result);
+      });
+  }, []);;
+
+  axios.get('/api/proxy').then(res => {
+    console.log(res);
+  });
+
+  axios.get('https://google.com')
+    .then(res => console.log('loaded google'))
+    .catch(() => console.warn('load error'));
+
+
+
+
   return (
     <div>
       <BaseLayout>

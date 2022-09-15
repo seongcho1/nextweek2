@@ -14,7 +14,7 @@ export default function BaseLayout({ children }) {
         </Container>
       </main>
 
-      <footer>>
+      <footer>
         <Container>
           <div className="border-t py-4">
             <p>
